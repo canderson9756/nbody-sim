@@ -6,5 +6,23 @@
 
 #IncludeRegexTransform: 
 
+/home/canderson/projects/nbody-sim/src/body.h
+
 /home/canderson/projects/nbody-sim/src/main.cpp
+SFML/Graphics.hpp
+-
+simulation.h
+/home/canderson/projects/nbody-sim/src/simulation.h
+iostream
+-
+constants.h
+/home/canderson/projects/nbody-sim/src/constants.h
+
+/home/canderson/projects/nbody-sim/src/simulation.h
+body.h
+/home/canderson/projects/nbody-sim/src/body.h
+vector
+-
+
+include/constants.h
 
