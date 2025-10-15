@@ -1,18 +1,16 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/canderson/projects/nbody-sim/src/body.cpp" "/home/canderson/projects/nbody-sim/CMakeFiles/nbody-sim.dir/src/body.cpp.o"
-  "/home/canderson/projects/nbody-sim/src/main.cpp" "/home/canderson/projects/nbody-sim/CMakeFiles/nbody-sim.dir/src/main.cpp.o"
-  "/home/canderson/projects/nbody-sim/src/simulation.cpp" "/home/canderson/projects/nbody-sim/CMakeFiles/nbody-sim.dir/src/simulation.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "include"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/canderson/nbody-sim/src/body.cpp" "CMakeFiles/nbody-sim.dir/src/body.cpp.o" "gcc" "CMakeFiles/nbody-sim.dir/src/body.cpp.o.d"
+  "/home/canderson/nbody-sim/src/main.cpp" "CMakeFiles/nbody-sim.dir/src/main.cpp.o" "gcc" "CMakeFiles/nbody-sim.dir/src/main.cpp.o.d"
+  "/home/canderson/nbody-sim/src/simulation.cpp" "CMakeFiles/nbody-sim.dir/src/simulation.cpp.o" "gcc" "CMakeFiles/nbody-sim.dir/src/simulation.cpp.o.d"
   )
 
 # Targets to which this target links.

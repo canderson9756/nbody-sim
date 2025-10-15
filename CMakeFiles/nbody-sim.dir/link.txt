@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/nbody-sim.dir/src/main.cpp.o CMakeFiles/nbody-sim.dir/src/body.cpp.o CMakeFiles/nbody-sim.dir/src/simulation.cpp.o  -o nbody-sim 
+/usr/bin/c++ CMakeFiles/nbody-sim.dir/src/main.cpp.o CMakeFiles/nbody-sim.dir/src/body.cpp.o CMakeFiles/nbody-sim.dir/src/simulation.cpp.o -o nbody-sim 

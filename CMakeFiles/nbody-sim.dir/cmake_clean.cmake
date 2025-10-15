@@ -1,7 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/nbody-sim.dir/src/body.cpp.o"
+  "CMakeFiles/nbody-sim.dir/src/body.cpp.o.d"
   "CMakeFiles/nbody-sim.dir/src/main.cpp.o"
+  "CMakeFiles/nbody-sim.dir/src/main.cpp.o.d"
   "CMakeFiles/nbody-sim.dir/src/simulation.cpp.o"
+  "CMakeFiles/nbody-sim.dir/src/simulation.cpp.o.d"
   "nbody-sim"
   "nbody-sim.pdb"
 )
