@@ -10,8 +10,8 @@ void Simulation::step(double dt){
         body.resetForce();
     }
 
-    for (size_t i = 0; i < bodies.size(); ++i) {
-        for (size_t j = i + 1; j < bodies.size(); ++j) {
+    for (int i = 0; i < bodies.size(); ++i) {
+        for (int j = i + 1; j < bodies.size(); ++j) {
             bodies[i].addForce(bodies[j]);
             bodies[j].addForce(bodies[i]); // Newton's third law
         }
