@@ -5,7 +5,13 @@ CMakeFiles/nbody-sim.dir/src/body.cpp.o: src/body.cpp
 CMakeFiles/nbody-sim.dir/src/body.cpp.o: src/body.h
 CMakeFiles/nbody-sim.dir/src/body.cpp.o: include/constants.h
 
+CMakeFiles/nbody-sim.dir/src/main.cpp.o: src/body.h
 CMakeFiles/nbody-sim.dir/src/main.cpp.o: src/main.cpp
+CMakeFiles/nbody-sim.dir/src/main.cpp.o: src/simulation.h
+CMakeFiles/nbody-sim.dir/src/main.cpp.o: include/constants.h
 
+CMakeFiles/nbody-sim.dir/src/simulation.cpp.o: src/body.h
 CMakeFiles/nbody-sim.dir/src/simulation.cpp.o: src/simulation.cpp
+CMakeFiles/nbody-sim.dir/src/simulation.cpp.o: src/simulation.h
+CMakeFiles/nbody-sim.dir/src/simulation.cpp.o: include/constants.h
 

@@ -1,4 +1,5 @@
 #pragma once
+#include <SFML/Graphics.hpp>
 
 struct Vector2D {
     double x, y;
@@ -15,8 +16,9 @@ public:
     Vector2D velocity;
     Vector2D force;
     double mass;
+    sf::CircleShape shape;
 
-    Body(double x, double y, double vx, double vy, double m);
+    Body(double x, double y, double vx, double vy, double m, double r);
     void resetForce();
     void addForce(const Body& other);
     void update(double dt);
