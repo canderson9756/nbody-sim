@@ -1,3 +1,0 @@
-/home/canderson/nbody-sim/CMakeFiles/nbody-sim.dir
-/home/canderson/nbody-sim/CMakeFiles/edit_cache.dir
-/home/canderson/nbody-sim/CMakeFiles/rebuild_cache.dir

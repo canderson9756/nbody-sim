@@ -153,6 +153,33 @@ src/body.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbody-sim.dir/build.make CMakeFiles/nbody-sim.dir/src/body.cpp.s
 .PHONY : src/body.cpp.s
 
+<<<<<<< HEAD
+=======
+src/integrator2d.o: src/integrator2d.cpp.o
+.PHONY : src/integrator2d.o
+
+# target to build an object file
+src/integrator2d.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbody-sim.dir/build.make CMakeFiles/nbody-sim.dir/src/integrator2d.cpp.o
+.PHONY : src/integrator2d.cpp.o
+
+src/integrator2d.i: src/integrator2d.cpp.i
+.PHONY : src/integrator2d.i
+
+# target to preprocess a source file
+src/integrator2d.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbody-sim.dir/build.make CMakeFiles/nbody-sim.dir/src/integrator2d.cpp.i
+.PHONY : src/integrator2d.cpp.i
+
+src/integrator2d.s: src/integrator2d.cpp.s
+.PHONY : src/integrator2d.s
+
+# target to generate assembly for a file
+src/integrator2d.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbody-sim.dir/build.make CMakeFiles/nbody-sim.dir/src/integrator2d.cpp.s
+.PHONY : src/integrator2d.cpp.s
+
+>>>>>>> 97eff3cd7c4ee916872f1a7975a615380f9bc046
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -213,6 +240,9 @@ help:
 	@echo "... src/body.o"
 	@echo "... src/body.i"
 	@echo "... src/body.s"
+	@echo "... src/integrator2d.o"
+	@echo "... src/integrator2d.i"
+	@echo "... src/integrator2d.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
