@@ -1,23 +1,26 @@
 #include "simulation.h"
 #include "constants.h"
+#include <iostream>
 
 void Simulation::addBody(const Body& body){
     bodies.push_back(body);
+    integrator.iterateBodies();
 }
 
 void Simulation::step(double dt){
+    integrator.step(bodies);
     for (Body& body : bodies){
-        body.resetForce();
+        body.update();
     }
+}
 
-    for (int i = 0; i < bodies.size(); ++i) {
-        for (int j = i + 1; j < bodies.size(); ++j) {
-            bodies[i].addForce(bodies[j]);
-            bodies[j].addForce(bodies[i]); // Newton's third law
-        }
-    }
-
-    for (Body& body : bodies){
-        body.update(dt);
+void Simulation::printValues(){
+    int bodyNum = 1;
+    for(Body& body : bodies){
+        std::cout << "Position of body " << bodyNum <<":    " << body.position.x << ", " << body.position.y << std::endl;
+        std::cout << "scaled Position of body " << bodyNum <<":    " << body.position.x * (1/SCALE) << ", " << body.position.y * (1/SCALE) << std::endl;
+        std::cout << "velocity of body " << bodyNum <<":    " << body.velocity.x << ", " << body.velocity.y << std::endl;
+        std::cout << "acceleration of body " << bodyNum <<":    " << body.acceleration.x << ", " << body.acceleration.y << std::endl;
+        bodyNum += 1;
     }
 }
