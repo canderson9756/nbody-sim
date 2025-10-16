@@ -21,8 +21,8 @@ Vector2D& Vector2D::operator+=(const Vector2D& other){
 }
 
 Body::Body(double x, double y, double vx, double vy, double m, double r) : position{x,y},velocity{vx,vy},mass{m},force{0,0} {
-    shape.setRadius(r*SCALE);
-    shape.setPosition(x*SCALE,y*SCALE);
+    shape.setRadius(r*(1/SCALE));
+    shape.setPosition(x*(1/SCALE),y*(1/SCALE));
     shape.setFillColor(sf::Color::White);  // So it's visible
     // shape.setOrigin(shape.getRadius(), shape.getRadius());
 }
@@ -39,15 +39,6 @@ void Body::addForce(const Body& other){
     force += direction * F;
 }
 
-void Body::update(double dt) {
-    std::cout <<"Force on Body: "<<force.x << ", "<< mass << std::endl;
-
-    Vector2D acceleration = force * (1.0 / mass);
-    velocity += acceleration * dt;
-    position += velocity * dt;
-    shape.setPosition(position.x*SCALE, position.y*SCALE);
-    std::cout << "Acceleration: " << acceleration.x << ", " << acceleration.y << std::endl;
-    std::cout << "Velocity: " << velocity.x << ", " << velocity.y << std::endl;
-    std::cout << "Scaled Position: " << position.x * SCALE << ", " << position.y * SCALE << std::endl;
-    // std::cout << "Scaled Radius: " << shape.getRadius() << std::endl;
+void Body::update() {
+    shape.setPosition(position.x * (1/SCALE), position.y * (1/SCALE));
 }

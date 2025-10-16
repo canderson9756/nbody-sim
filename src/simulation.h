@@ -2,14 +2,14 @@
 #include "body.h"
 #include "integrator2d.hpp"
 #include <vector>
+#include <SFML/Graphics.hpp>
 
 class Simulation {
-public:
-    std::vector<Body> bodies;
-    Integrator2d integrator;
-
-    Simulation() = default;
-    void addBody(const Body& body);
-    void step(double dt);
-    void printValues();
+    public:
+        std::vector<Body> bodies;
+        Integrator2d integrator;
+        Simulation() = default;
+        void addBody(const Body& body);
+        void step(double dt);
+        void printValues();
 };

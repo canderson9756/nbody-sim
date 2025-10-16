@@ -3,6 +3,8 @@
 #include <cmath>
 #include <iostream>
 
+const double SOFTENING = 1e9;  // Try different values (1e4 to 1e6)
+
 void Integrator2d::iterateBodies(){
     nBodies += 1;
 }
@@ -32,7 +34,7 @@ void Integrator2d::step(std::vector<Body>& bodies){
 }
 
 double Integrator2d::dist(std::vector<Body>& bodies, int i, int j){
-    return sqrt((bodies[i].position.x-bodies[j].position.x)*(bodies[i].position.x-bodies[j].position.x) + (bodies[i].position.y-bodies[j].position.y)*(bodies[i].position.y-bodies[j].position.y));
+    return sqrt((bodies[i].position.x-bodies[j].position.x)*(bodies[i].position.x-bodies[j].position.x) + (bodies[i].position.y-bodies[j].position.y)*(bodies[i].position.y-bodies[j].position.y) + SOFTENING*SOFTENING);
 }
 
 void Integrator2d::calcAcceleration(std::vector<Body>& bodies){

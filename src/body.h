@@ -22,6 +22,6 @@ public:
     Body(double x, double y, double vx, double vy, double m, double r);
     void resetForce();
     void addForce(const Body& other);
-    void update(double dt);
+    void update();
 };
 
