@@ -16,9 +16,6 @@ int main() {
     sim.addBody(b4);
 
     sim.setSaveFile("data-4-body.csv");
-    sf::View view(sf::Vector2f(0.f, 0.f), sf::Vector2f(window.getSize()));
-    window.setView(view);
-
     int count = 0;
 
     while (window.isOpen()) {
@@ -31,6 +28,9 @@ int main() {
         for (Body& body : sim.bodies){
             window.draw(body.shape);
         }
+        sim.calculateCenterOfMass();
+        sf::View view(sf::Vector2f(sim.centerOfMass.x * (1/SCALE), sim.centerOfMass.y * (1/SCALE)), sf::Vector2f(window.getSize()));
+        window.setView(view);
         window.display();
         sim.saveValues(10, count);
         count += 1;

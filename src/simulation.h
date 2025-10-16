@@ -10,10 +10,12 @@ class Simulation {
     public:
         std::vector<Body> bodies;
         Integrator2d integrator;
+        Vector2D centerOfMass;
         Simulation() = default;
         void addBody(const Body& body);
         void step(double dt);
         void printValues();
         void saveValues(int frequency, int stepN);
         void setSaveFile(std::string filename);
+        void calculateCenterOfMass();
 };

@@ -54,3 +54,15 @@ void Simulation::saveValues(int frequency, int stepN){
 void Simulation::setSaveFile(std::string filename){
     saveFile = filename;
 }
+
+void Simulation::calculateCenterOfMass(){
+    double numerator_x = 0;
+    double numerator_y = 0;
+    double denomenator = 0;
+    for(Body& body : bodies){
+        numerator_x += body.mass * body.position.x;
+        numerator_y += body.mass * body.position.y;
+        denomenator += body.mass;
+    }
+    centerOfMass = {numerator_x/denomenator, numerator_y/denomenator};
+}
