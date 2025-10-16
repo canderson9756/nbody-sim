@@ -6,14 +6,16 @@
 int main() {
     sf::RenderWindow window(sf::VideoMode(800,600), "N-body Simulation");
     Simulation sim;
-    Body b1(5e10, 0.0, 0.0, 2e4, 1e30, 1e10);
+    Body b1(5e10, 0.0, 0.0, 2e4, 2e30, 1e10);
     Body b2(-5e10, 0.0, 0.0,-2e4, 1E30, 1e10);
     Body b3(-1e11, 0.0, 0.0, 2e4, 1e24, 6e9);
+    Body b4(1e11, 0.0, 0.0, -2e4, 1e24, 6e9);
     sim.addBody(b1);
     sim.addBody(b2);
     sim.addBody(b3);
+    sim.addBody(b4);
 
-    sim.setSaveFile("data.csv");
+    sim.setSaveFile("data-4-body.csv");
     sf::View view(sf::Vector2f(0.f, 0.f), sf::Vector2f(window.getSize()));
     window.setView(view);
 
