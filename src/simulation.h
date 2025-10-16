@@ -5,6 +5,8 @@
 #include <SFML/Graphics.hpp>
 
 class Simulation {
+    private:
+        std::string saveFile;
     public:
         std::vector<Body> bodies;
         Integrator2d integrator;
@@ -12,4 +14,6 @@ class Simulation {
         void addBody(const Body& body);
         void step(double dt);
         void printValues();
+        void saveValues(int frequency, int stepN);
+        void setSaveFile(std::string filename);
 };
