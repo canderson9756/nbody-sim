@@ -14,6 +14,7 @@ class Body {
 public:
     Vector2D position;
     Vector2D velocity;
+    Vector2D acceleration;
     Vector2D force;
     double mass;
     sf::CircleShape shape;
