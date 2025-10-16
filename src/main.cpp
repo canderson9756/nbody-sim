@@ -6,10 +6,10 @@
 int main() {
     sf::RenderWindow window(sf::VideoMode(800,600), "N-body Simulation");
     Simulation sim;
-    Body b1(5e10, 0.0, 0.0, 2e4, 2e30, 1e10);
-    Body b2(-5e10, 0.0, 0.0,-2e4, 1E30, 1e10);
-    Body b3(-1e11, 0.0, 0.0, 2e4, 1e24, 6e9);
-    Body b4(1e11, 0.0, 0.0, -2e4, 1e24, 6e9);
+    Body b1(5e10, 0.0, 0.0, 2.2e4, 2e30, 1e10);
+    Body b2(-5e10, 0.0, 0.0,-1.8e4, 1E30, 1e10);
+    Body b3(-0.8e11, 0.0, 0.0, 2e4, 1e24, 6e9);
+    Body b4(1.5e11, 0.0, 0.0, -2.5e4, 5e24, 6e9);
     sim.addBody(b1);
     sim.addBody(b2);
     sim.addBody(b3);

@@ -3,7 +3,7 @@
 #include <cmath>
 #include <iostream>
 
-const double SOFTENING = 1e9;  // Try different values (1e4 to 1e6)
+const double SOFTENING = 1e8;  // Try different values (1e4 to 1e6)
 
 void Integrator2d::iterateBodies(){
     nBodies += 1;
