@@ -29,7 +29,7 @@ void Simulation::printValues(){
 void Simulation::saveValues(int frequency, int stepN){
     if (stepN==0){
         std::ofstream csvFile;
-        csvFile.open(saveFile, std::ios::app);
+        csvFile.open(saveFile);
         csvFile << "Timestamp";
         for(int i=0;i<bodies.size();++i){
             csvFile<<", Body "<<i;
