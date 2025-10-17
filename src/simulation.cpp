@@ -2,6 +2,11 @@
 #include "constants.h"
 #include <iostream>
 #include <fstream>
+#include <yaml-cpp/yaml.h>
+
+Simulation::Simulation(std::string filename) : configParser(filename){
+    configParser.readYAML(this);
+}
 
 void Simulation::addBody(const Body& body){
     bodies.push_back(body);
@@ -65,4 +70,43 @@ void Simulation::calculateCenterOfMass(){
         denomenator += body.mass;
     }
     centerOfMass = {numerator_x/denomenator, numerator_y/denomenator};
+}
+
+void Simulation::setIntegratorType(std::string integrator){
+    integratorType = integrator;
+}
+
+Simulation::Parser::Parser(std::string configFile) : filename(configFile){}
+
+void Simulation::Parser::readYAML(Simulation *sim){
+    YAML::Node config = YAML::LoadFile(filename);
+    if(config["integrator"]){
+        sim->setIntegratorType(config["integrator"].as<std::string>());
+    }
+    if (config["bodies"]) {
+        YAML::Node bodies = config["bodies"];
+
+        if (!bodies.IsSequence()) {
+            std::cerr << "'bodies' is not a list!" << std::endl;
+            return;
+        }
+        
+        for (const auto& bodyNode : bodies) {
+            double x_pos = bodyNode["x_position"].as<double>();
+            double y_pos = bodyNode["y_position"].as<double>();
+            double x_vel = bodyNode["x_velocity"].as<double>();
+            double y_vel = bodyNode["y_velocity"].as<double>();
+            double mass  = bodyNode["mass"].as<double>();
+            double radius = bodyNode["radius"].as<double>();
+            std::cout << "Parsed body:\n";
+            std::cout << "  Position: (" << x_pos << ", " << y_pos << ")\n";
+            std::cout << "  Velocity: (" << x_vel << ", " << y_vel << ")\n";
+            std::cout << "  Mass: " << mass << "\n";
+            std::cout << "  Radius: " << radius << "\n";
+
+            // Create and add the body
+            Body b(x_pos, y_pos, x_vel, y_vel, mass, radius);
+            sim->addBody(b);
+        }
+    }
 }

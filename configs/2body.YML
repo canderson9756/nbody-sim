@@ -1,0 +1,14 @@
+integrator: threeleap
+bodies:
+  - x_position: 5e10
+    y_position: 0.0
+    x_velocity: 0.0
+    y_velocity: 2.2e4
+    mass: 1e30
+    radius: 1e10
+  - x_position: -5e10
+    y_position: 0.0
+    x_velocity: 0.0
+    y_velocity: -2.2e4
+    mass: 1e30
+    radius: 1e10
