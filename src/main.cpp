@@ -3,9 +3,13 @@
 #include <iostream>
 #include "constants.h"
 
-int main() {
+int main(int argc, char* argv[]) {
     sf::RenderWindow window(sf::VideoMode(800,600), "N-body Simulation");
-    Simulation sim("configs/2body.YML");
+    if(argc<2){
+        std::cout << "Need to specify a config file. Ending program.....";
+        return 1;
+    }
+    Simulation sim(argv[1]);
     // Body b1(5e10, 0.0, 0.0, 2.2e4, 2e30, 1e10);
     // Body b2(-5e10, 0.0, 0.0,-1.8e4, 1E30, 1e10);
     // Body b3(-0.8e11, 0.0, 0.0, 2e4, 1e24, 6e9);
@@ -14,7 +18,7 @@ int main() {
     // sim.addBody(b2);
     // sim.addBody(b3);
     // sim.addBody(b4);
-
+    
     sim.setSaveFile("yamltest.csv");
     int count = 0;
 

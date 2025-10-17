@@ -8,7 +8,6 @@ add_executable(nbody-sim
     src/body.cpp
     src/simulation.cpp
     src/integrator2d.cpp
-    src/parser.cpp
 )
 
 target_include_directories(nbody-sim PRIVATE
