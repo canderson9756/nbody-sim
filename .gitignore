@@ -5,3 +5,5 @@ nbody-sim
 Makefile
 *.csv
 data-visualisations/
+_deps/
+.vscode/
